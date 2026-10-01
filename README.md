@@ -1,8 +1,10 @@
 # prueba-practica-logica-Grupo6
 # EcoEnergy – Consumo Eléctrico
 Integrantes
-Castro Sanchez Joseph Andres
-
+* Castro Sanchez Joseph Andres
+* Ortiz Sanchez Holger Steeve
+* Pico Cepeda Matias Alejandro 
+* Yaguana Manzano Marlon Joel 
 
 ## Ejercicio asignado
 
