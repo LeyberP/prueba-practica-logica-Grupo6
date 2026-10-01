@@ -28,9 +28,22 @@
 
 | Campo | Información |
 |---|---|
-| **Paralelo** |Primero - B|
+| **Paralelo** | Primero - B |
 | **Docente** | Ing. José Caiza .Mg |
 | **Asignatura** | Programación en Java – Estructuras de Control |
+
+---
+
+## 🧭 Acceso rápido al repositorio
+
+| 📂 Carpeta / archivo | Contenido | Enlace |
+|---|---|:-:|
+| 📁 `Ejercicio_EcoEnergy/` | Código Java y pseudocódigo PSeInt | [Abrir carpeta](Ejercicio_EcoEnergy/) |
+| ☕ `EjercicioGrupal.java` | Código fuente del programa | [Ver código](Ejercicio_EcoEnergy/EjercicioGrupal.java) |
+| 📝 `FacturacionEnergia.psc` | Algoritmo en PSeInt | [Ver pseudocódigo](Ejercicio_EcoEnergy/FacturacionEnergia.psc) |
+| 📁 `Diagrama de flujo/` | Diagrama de flujo del algoritmo | [Abrir carpeta](Diagrama%20de%20flujo/) |
+| 📁 `Evidencia Ejecuciòn/` | Captura de la ejecución en VS Code | [Abrir carpeta](Evidencia%20Ejecuci%C3%B2n/) |
+| 🕓 Historial | Commits del grupo | [Ver commits](https://github.com/LeyberP/prueba-practica-logica-Grupo6/commits/main) |
 
 ---
 
@@ -46,10 +59,9 @@
 8. [Estructuras de control utilizadas](#-8-estructuras-de-control-utilizadas)
 9. [Casos de prueba](#-9-casos-de-prueba)
 10. [Prueba de escritorio](#-10-prueba-de-escritorio)
-11. [Evidencias](#-11-evidencias)
+11. [Evidencia de ejecución](#-11-evidencia-de-ejecución)
 12. [Cómo compilar y ejecutar](#-12-cómo-compilar-y-ejecutar)
 13. [Estructura del repositorio](#-13-estructura-del-repositorio)
-14. [Registro de commits](#-14-registro-de-commits)
 
 ---
 
@@ -89,7 +101,7 @@ total    = subtotal + recargo
 | Estrato | 1 ≤ estrato ≤ 6 | Muestra error y vuelve a pedir |
 | kWh | kWh > 0 | Muestra error y vuelve a pedir |
 
-> ℹ️ **Nota:** el enunciado no indica valores de tarifa. Los valores de la tabla y el recargo del 10 % fueron definidas por nosotros.
+> ℹ️ **Nota:** el enunciado no indica valores de tarifa. Los valores de la tabla y el recargo del 10 % fueron definidos por nosotros.
 
 ---
 
@@ -126,6 +138,8 @@ total    = subtotal + recargo
 ---
 
 ## 📝 5. Algoritmo / Pseudocódigo
+
+📄 Archivo PSeInt: [`Ejercicio_EcoEnergy/FacturacionEnergia.psc`](Ejercicio_EcoEnergy/FacturacionEnergia.psc)
 
 ```
 INICIO
@@ -184,13 +198,14 @@ INICIO
   FIN PARA
 
   mostrar totalKwh, totalFacturado, contadorAltoConsumo, medidorMayor, mayorConsumo
-  mostrar "Programa finalizado correctamente."
 FIN
 ```
 
 ---
 
 ## 📊 6. Diagrama de flujo
+
+📁 Carpeta: [`Diagrama de flujo/`](Diagrama%20de%20flujo/)
 
 ```mermaid
 flowchart TD
@@ -224,16 +239,20 @@ flowchart TD
     W --> X[i = i + 1] --> G
 ```
 
+<!-- Si suben una imagen del diagrama a la carpeta "Diagrama de flujo", quiten este comentario y ajusten el nombre del archivo:
+<p align="center"><img src="Diagrama%20de%20flujo/diagrama_flujo.png" alt="Diagrama de flujo" width="700"></p>
+-->
+
 ---
 
 ## 💻 7. Código fuente
 
-📄 `Ejercicio1/Ejercicio1.java`
+📄 Archivo: [`Ejercicio_EcoEnergy/EjercicioGrupal.java`](Ejercicio_EcoEnergy/EjercicioGrupal.java)
 
 ```java
 import java.util.Scanner;
 
-public class Ejercicio1 {
+public class EjercicioGrupal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -332,7 +351,6 @@ public class Ejercicio1 {
         System.out.printf("Total facturado: $%.2f%n", totalFacturado);
         System.out.println("Usuarios con recargo (>300 kWh): " + contadorAltoConsumo);
         System.out.printf("Medidor con mayor consumo: %s (%.2f kWh)%n", medidorMayor, mayorConsumo);
-        System.out.println("Programa finalizado correctamente.");
 
         sc.close();
     }
@@ -352,7 +370,7 @@ public class Ejercicio1 {
 | Contador | ✅ | `contadorAltoConsumo` |
 | Acumulador | ✅ | `totalKwh`, `totalFacturado` |
 | Máximo | ✅ | `mayorConsumo` / `medidorMayor` |
-| Mensajes claros y finalización | ✅ | Resumen final y "Programa finalizado correctamente." |
+| Mensajes claros y finalización | ✅ | Factura por usuario y resumen final |
 
 ---
 
@@ -385,7 +403,7 @@ public class Ejercicio1 {
 | Entrada | Mensaje esperado | Acción |
 |:-:|---|---|
 | N = 0 | `Error: N debe ser mayor que 0.` | Vuelve a pedir N |
-| Estrato = 7 | `Error: el estrato debe estar entre 1 y 6.` | Vuelve a pedir el estrato |
+| Estrato = -1 / 7 | `Error: el estrato debe estar entre 1 y 6.` | Vuelve a pedir el estrato |
 | kWh = -20 | `Error: el consumo debe ser mayor que 0.` | Vuelve a pedir los kWh |
 
 ---
@@ -407,36 +425,43 @@ Seguimiento de variables con los datos del **Caso 1** (N = 3):
 ```
 ========== RESUMEN ==========
 Usuarios procesados: 3
-kWh total consumido: 580.00 kWh
-Total facturado: $56.85
+kWh total consumido: 580,00 kWh
+Total facturado: $56,85
 Usuarios con recargo (>300 kWh): 1
-Medidor con mayor consumo: M002 (350.00 kWh)
-Programa finalizado correctamente.
+Medidor con mayor consumo: M002 (350,00 kWh)
 ```
 
 > El separador decimal (punto o coma) que muestra `printf` depende de la configuración regional del equipo.
 
 ---
 
-## 📎 11. Evidencias
+## 📸 11. Evidencia de ejecución
 
-### 🖼️ Capturas de compilación y ejecución
+📁 Carpeta: [`Evidencia Ejecuciòn/`](Evidencia%20Ejecuci%C3%B2n/)
 
-**Compilación**
+<p align="center">
+  <a href="Evidencia%20Ejecuci%C3%B2n/WhatsApp%20Image%202026-10-01%20at%2011.52.21%20AM.jpeg">
+    <img src="Evidencia%20Ejecuci%C3%B2n/WhatsApp%20Image%202026-10-01%20at%2011.52.21%20AM.jpeg" alt="Ejecución del programa EcoEnergy en Visual Studio Code" width="850">
+  </a>
+</p>
 
-![Compilación](Ejercicio1/capturas/01_compilacion.png)
+### 📋 Datos de la ejecución mostrada en la captura
 
-**Caso normal**
+La captura incluye **datos inválidos** (estrato -1 y 7), un **caso normal** y un usuario **con recargo**:
 
-![Caso normal](Ejercicio1/capturas/02_caso_normal.png)
+| Usuario | Medidor | Estrato | kWh | Tarifa | Subtotal | Recargo | Total |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| 1 | 2 | -1 ❌ → 7 ❌ → 4 ✅ | 150 | $0,11 | $16,50 | $0,00 | **$16,50** |
+| 2 | 5 | 4 | 15 | $0,11 | $1,65 | $0,00 | **$1,65** |
+| 3 | 12 | 6 | 500 | $0,15 | $75,00 | $7,50 | **$82,50** |
 
-**Caso límite**
+**Resumen obtenido:**
+- kWh total consumido: **665,00 kWh**
+- Total facturado: **$100,65**
+- Usuarios con recargo (>300 kWh): **1**
+- Medidor con mayor consumo: **12 (500,00 kWh)**
 
-![Caso límite](Ejercicio1/capturas/03_caso_limite.png)
-
-**Caso inválido**
-
-![Caso inválido](Ejercicio1/capturas/04_caso_invalido.png)
+✅ Los resultados coinciden con el cálculo manual: 16,50 + 1,65 + 82,50 = 100,65 y 150 + 15 + 500 = 665.
 
 ---
 
@@ -445,38 +470,42 @@ Programa finalizado correctamente.
 **Requisitos:** JDK 8 o superior · Visual Studio Code con *Extension Pack for Java* (o una terminal).
 
 ```bash
-cd Ejercicio1
-javac Ejercicio1.java
-java Ejercicio1
+git clone https://github.com/LeyberP/prueba-practica-logica-Grupo6.git
+cd prueba-practica-logica-Grupo6/Ejercicio_EcoEnergy
+javac EjercicioGrupal.java
+java EjercicioGrupal
 ```
 
-En Visual Studio Code también se puede abrir `Ejercicio1.java` y presionar **Run** sobre el método `main`.
+En Visual Studio Code también se puede abrir `EjercicioGrupal.java` y presionar **Run** sobre el método `main`.
 
 ---
 
 ## 📁 13. Estructura del repositorio
 
 ```
-prueba-practica-logica-Nombre-Apellido/
+prueba-practica-logica-Grupo6/
 ├── README.md
-├── Ejercicio1/
-│   ├── Ejercicio1.java
-│   ├── evidencia/
-│   │   └── Ejercicio1_evidencia_manuscrita.pdf
-│   └── capturas/
-│       ├── 01_compilacion.png
-│       ├── 02_caso_normal.png
-│       ├── 03_caso_limite.png
-│       └── 04_caso_invalido.png
-└── Ejercicio2/
-    ├── Ejercicio2.java
-    ├── evidencia/
-    │   └── Ejercicio2_evidencia_manuscrita.pdf
-    └── capturas/
-        ├── 01_compilacion.png
-        ├── 02_caso_normal.png
-        ├── 03_caso_limite.png
-        └── 04_caso_invalido.png
+├── Diagrama de flujo/
+│   └── Readme
+├── Ejercicio_EcoEnergy/
+│   ├── EjercicioGrupal.java
+│   └── FacturacionEnergia.psc
+└── Evidencia Ejecuciòn/
+    └── WhatsApp Image 2026-10-01 at 11.52.21 AM.jpeg
 ```
 
+| Carpeta | Enlace |
+|---|:-:|
+| 📁 Diagrama de flujo | [Abrir](Diagrama%20de%20flujo/) |
+| 📁 Ejercicio_EcoEnergy | [Abrir](Ejercicio_EcoEnergy/) |
+| 📁 Evidencia Ejecuciòn | [Abrir](Evidencia%20Ejecuci%C3%B2n/) |
+
 ---
+
+<div align="center">
+
+**Grupo 6** · Leyber Peñafiel · Matias Pico · Joel Pacha · Marlon Yaguana · Joseph Castro · Steeve Ortiz
+
+⚡ *EcoEnergy – Universidad Técnica de Ambato · FISEI* ⚡
+
+</div>
